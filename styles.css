@@ -1,0 +1,316 @@
+:root {
+  --bg: #0d1430;
+  --card: #18244a;
+  --text: #f2f5ff;
+  --muted: #b9c3e2;
+  --border: #2a3969;
+  --primary: #86a7ff;
+  --primary-soft: #24366d;
+  --shadow: 0 14px 28px rgba(4, 9, 26, 0.45);
+}
+
+body.dark {
+  --bg: #070d1f;
+  --card: #121d3c;
+  --text: #f8f9ff;
+  --muted: #c7d0ed;
+  --border: #27365f;
+  --primary: #97b4ff;
+  --primary-soft: #1f315f;
+  --shadow: 0 16px 30px rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background:
+    linear-gradient(to bottom, rgba(6, 10, 28, 0.78), rgba(6, 10, 28, 0.9)),
+    radial-gradient(1100px 500px at 50% -15%, rgba(122, 104, 255, 0.22) 0%, transparent 60%),
+    url("in the night garden 1.jpg") center / cover no-repeat fixed;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.topbar {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 20px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  letter-spacing: 0.2px;
+}
+
+.theme-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 20px 40px;
+}
+
+.hero {
+  background: linear-gradient(165deg, #1d2d5d 0%, var(--card) 55%);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+  box-shadow: var(--shadow);
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0 8px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+.characters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.character {
+  margin: 0;
+  background: #101b3a;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.character img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr minmax(160px, 220px) auto;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.ghost-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.ghost-btn.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--primary);
+  font-weight: 700;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section-head h3 {
+  margin: 0;
+}
+
+#resultCount {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+}
+
+.card-banner {
+  padding: 14px;
+  color: white;
+  font-weight: 800;
+}
+
+.card-body {
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-chip {
+  font-size: 0.8rem;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-weight: 700;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.primary-btn,
+.small-btn {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 9px 12px;
+}
+
+.small-btn {
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 9px 10px;
+}
+
+.empty {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  color: var(--muted);
+  text-align: center;
+}
+
+#recipeDialog {
+  border: none;
+  border-radius: 16px;
+  width: min(680px, 92vw);
+  padding: 0;
+}
+
+#recipeDialog::backdrop {
+  background: rgba(7, 12, 24, 0.5);
+}
+
+.dialog-content {
+  background: var(--card);
+  color: var(--text);
+  padding: 22px;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.dialog-content h3 {
+  margin-top: 0;
+}
+
+.dialog-meta {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}

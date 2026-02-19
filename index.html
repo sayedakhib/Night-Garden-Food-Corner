@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Night Garden Recipe Corner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Night Garden Recipe Corner</h1>
+    <button id="themeBtn" class="theme-btn" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="tag">Wholesome Recipes for Tiny Tummies & Big Smiles</p>
+        <h2>Cook with your favorite garden friends</h2>
+        <p class="subtitle">
+          A playful recipe page inspired by the cozy world of colorful garden characters.
+          Browse easy meals, snacks, and treats.
+        </p>
+      </div>
+
+      <div class="characters" aria-label="Night Garden characters">
+        <figure class="character"><img src="igglepiggle.jpeg" alt="Igglepiggle character" loading="lazy" /></figure>
+        <figure class="character"><img src="maka paka.jpg" alt="Makka Pakka character" loading="lazy" /></figure>
+        <figure class="character"><img src="wottingers.webp" alt="Wottingers characters" loading="lazy" /></figure>
+        <figure class="character"><img src="in the night garden 1.jpg" alt="In The Night Garden characters" loading="lazy" /></figure>
+        <figure class="character"><img src="images.jpg" alt="In The Night Garden character group" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <section class="controls">
+      <input id="searchInput" type="text" placeholder="Search recipe name or ingredient..." />
+      <select id="typeFilter" aria-label="Filter recipes by type">
+        <option value="all">All Types</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="snack">Snack</option>
+        <option value="dessert">Dessert</option>
+      </select>
+      <button id="favOnlyBtn" class="ghost-btn" aria-pressed="false">Show Favorites</button>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h3>Recipes</h3>
+        <span id="resultCount">0 recipes</span>
+      </div>
+      <div id="recipeGrid" class="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <dialog id="recipeDialog">
+    <article class="dialog-content">
+      <button id="closeDialog" class="close-btn" aria-label="Close">✕</button>
+      <h3 id="dialogTitle"></h3>
+      <p id="dialogMeta" class="dialog-meta"></p>
+      <h4>Ingredients</h4>
+      <ul id="dialogIngredients"></ul>
+      <h4>Steps</h4>
+      <ol id="dialogSteps"></ol>
+    </article>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
